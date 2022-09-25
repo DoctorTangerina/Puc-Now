@@ -1,3 +1,3 @@
-# Puc-News
+# Puc-Now
 
-Repositório do projeto Puc News
+Repositório do projeto Puc Now
