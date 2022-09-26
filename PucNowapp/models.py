@@ -8,7 +8,9 @@ class Student(models.Model):
     last_name = models.CharField(max_length=30)
     course = models.CharField(max_length=30)
     semester = models.CharField(max_length=30)
-    email = models.EmailField()
+    email = models.EmailField(max_length=40)
+    password = models.CharField(max_length=40)
+    
     
 
     
