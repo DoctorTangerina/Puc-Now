@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de login</title> 
+    <link type="text/css" rel="stylesheet" href="{% static 'login.css' %}">
+    <style>
+        body{
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .login{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        button{
+            background-color: dodgerblue;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+        }
+        button:hover{
+            background-color: deepskyblue;
+            cursor: pointer;
+        }
+        h2{
+            color: white;
+        }
+        p{
+            color: white;
+			text-align: center;
+        }
+    </style>
+</head>
+ <ajuste >
+<body class="bg">
+    <img src="{% static 'logo.png' %}" style="position: absolute; left:43%">
+    <div class="login">
+        <input type="text" placeholder="Nome de usuario">
+        <br><br>
+        <input type="password" placeholder="Senha">
+        <br><br>
+		<p style="text-align: left">Lembrar senha
+		<label class="switch">
+			<input type="checkbox">
+			<span class="slider round"></span>
+		</label>
+		</p>
+        <button>Entrar</button>
+        <p>Esqueceu a senha?</p>
+        <p>Cadastre-se</p>
+    </div>
+</ajuste>
+</body>
+</html>

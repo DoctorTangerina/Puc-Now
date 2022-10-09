@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponse,request
 
-# Create your views here.
+def op(request):
+    render(request,'login.css')
+    return render(request,'login.html')
+
+
