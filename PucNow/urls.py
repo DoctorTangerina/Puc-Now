@@ -19,6 +19,14 @@ from PucNowapp import views
 from django.urls import re_path as url
 
 urlpatterns = [
-    path('admin/', admin.site.urls), path('',views.op
+    path('admin/', admin.site.urls), 
+    path('',views.PaginaInicial,name='login'),
+    path('esquecido/',views.EsqueceuSenha,name='esqueci'),
+    path('cadastro/',views.Cadastro,name='cadastro'),
+    path('perfil/',views.Perfil,name='perfil'),
+    path('home/',views.Home,name='home'),
+    path('cria-grupo/',views.CriaGrupo,name='cria-grupo'),
+    path('pesquisa-grupo/',views.PesquisaGrupo,name='pesquisa-grupo'),
+    path('grupo-de-estudos/',views.GrupoEstudos,name='grupo-de-estudos')
 ]
 
