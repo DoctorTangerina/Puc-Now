@@ -9,9 +9,17 @@
     <title>Pagina de login</title> 
     <link type="text/css" rel="stylesheet" href="{% static 'login.css' %}">
     <style>
+        .container{
+            justify-content: center;
+        }
         body{
 
             font-family: Arial, Helvetica, sans-serif;
+        }
+        .logo{
+            text-align: center;
+            margin-top: 10px;
+
         }
         .login{
             position: absolute;
@@ -49,7 +57,9 @@
 </head>
  <ajuste >
 <body class="bg">
-    <img src="{% static 'logo.png' %}" style="position: absolute; left:43%">
+    <div class="logo">
+        <img src="{% static 'logo.png' %}">
+    </div>
     <div class="login">
         <input type="text" placeholder="Nome de usuario">
         <br><br>

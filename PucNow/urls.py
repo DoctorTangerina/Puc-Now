@@ -19,6 +19,6 @@ from PucNowapp import views
 from django.urls import re_path as url
 
 urlpatterns = [
-    path('admin/', admin.site.urls), path('',views.op),
+    path('admin/', admin.site.urls), path('',views.op
 ]
 
