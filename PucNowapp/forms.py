@@ -1,10 +1,9 @@
 from django import forms
 
 class Cadastrar(forms.Form):
-    token = forms.CharField(max_length=100)
-    name = forms.CharField(max_length=40)
-    username = forms.CharField(max_length=20)
-    email = forms.EmailField(max_length=40)
-    password = forms.CharField(max_length=40)
-    course = forms.CharField(max_length=30)
-    semester = forms.IntegerField()
+    name = forms.CharField(label=False, max_length=40, widget=forms.TextInput(attrs={'placeholder': 'Nome'}))
+    username = forms.CharField(label=False, max_length=20, widget=forms.TextInput(attrs={'placeholder': 'Nome de usuário'}))
+    email = forms.EmailField(label=False, max_length=40, widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    password = forms.CharField(label=False, max_length=40, widget=forms.PasswordInput(attrs={'placeholder': 'Senha'}))
+    course = forms.CharField(label=False, max_length=30, widget=forms.TextInput(attrs={'placeholder': 'Curso'}))
+    semester = forms.IntegerField(label=False, widget=forms.NumberInput(attrs={'placeholder': 'Período'}))

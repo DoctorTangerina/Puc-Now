@@ -12,12 +12,13 @@ def EsqueceuSenha(request):
 def Cadastro(request):
     if request.method == 'POST':
         form = Cadastrar(request.POST)
-        print(request.POST)
         if(form.is_valid()):
-            Student(form[1:]).save()
-            print("cheguei aq")
+            Student(name=request.POST['name'], username=request.POST['username'], password=request.POST['password'], email=request.POST['email'], 
+            course=request.POST['course'], semester=request.POST['semester']).save()
             return render(request,'Login.html')
-    return render(request,'Cadastro.html')
+    else:
+        form = Cadastrar()
+    return render(request,'Cadastro.html', {'form': form})
 
 def Perfil(request):
     return render(request,'Perfil.html')
