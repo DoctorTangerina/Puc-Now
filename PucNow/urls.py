@@ -23,6 +23,7 @@ urlpatterns = [
     path('',views.PaginaInicial,name='login'),
     path('esquecido/',views.EsqueceuSenha,name='esqueci'),
     path('cadastro/',views.Cadastro,name='cadastro'),
+    path('cadastro/submit',views.Cadastro,name='cadastro'),
     path('perfil/',views.Perfil,name='perfil'),
     path('home/',views.Home,name='home'),
     path('cria-grupo/',views.CriaGrupo,name='cria-grupo'),
