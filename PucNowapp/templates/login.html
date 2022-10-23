@@ -13,19 +13,18 @@
             justify-content: center;
         }
         body{
-
             font-family: Arial, Helvetica, sans-serif;
         }
         .logo{
             text-align: center;
             margin-top: 10px;
-
         }
         .login{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+			align-items: center;
         }
         input{
             padding: 15px;
@@ -49,7 +48,7 @@
         h2{
             color: white;
         }
-        p{
+        a{
             color: white;
 			text-align: center;
         }
@@ -72,9 +71,11 @@
 		</label>
 		</p>
         <button>Entrar</button>
-        <p>Esqueceu a senha?</p>
-        <p>Cadastre-se</p>
-    </div>
+		<div class="text-center">
+			<a>Esqueceu a senha?</a><br>
+			<a href="\cadastro">Cadastre-se</a>
+		</div>
+	</div>
 </ajuste>
 </body>
 </html>
