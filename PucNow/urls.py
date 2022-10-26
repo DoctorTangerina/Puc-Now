@@ -23,11 +23,12 @@ urlpatterns = [
     path('',views.PaginaInicial,name='login'),
     path('esquecido/',views.EsqueceuSenha,name='esqueci'),
     path('cadastro/',views.Cadastro,name='cadastro'),
-    path('cadastro/submit',views.Cadastro,name='cadastro'),
+    path('cadastro/submit',views.ValidaEmail,name='validacao'),
     path('perfil/',views.Perfil,name='perfil'),
     path('home/',views.Home,name='home'),
     path('cria-grupo/',views.CriaGrupo,name='cria-grupo'),
     path('pesquisa-grupo/',views.PesquisaGrupo,name='pesquisa-grupo'),
-    path('grupo-de-estudos/',views.GrupoEstudos,name='grupo-de-estudos')
+    path('grupo-de-estudos/',views.GrupoEstudos,name='grupo-de-estudos'),
+    path('configuracao/',views.Config, name='config')
 ]
 

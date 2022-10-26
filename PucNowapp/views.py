@@ -3,6 +3,9 @@ from django.http import HttpResponse,request
 from .models import Student
 from .forms import Cadastrar
 
+def ValidaEmail (request):
+    return render (request, 'Validando.html')
+
 def PaginaInicial(request):
     return render(request,'Login.html')
 
