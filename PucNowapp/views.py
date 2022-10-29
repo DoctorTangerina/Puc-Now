@@ -38,5 +38,8 @@ def PesquisaGrupo(request):
 def GrupoEstudos(request):
     return render(request,'GrupoEstudos.html')
 
+def Config(request):
+    return render(request,'Configuracao.html')
+
 
 
