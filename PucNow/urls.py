@@ -21,6 +21,7 @@ from django.urls import re_path as url
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('',views.PaginaInicial,name='login'),
+    path('login',views.PaginaInicial,name='login'),
     path('esquecido/',views.EsqueceuSenha,name='esqueci'),
     path('cadastro/',views.Cadastro,name='cadastro'),
     path('cadastro/submit',views.ValidaEmail,name='validacao'),

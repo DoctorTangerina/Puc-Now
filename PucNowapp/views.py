@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,request
 from .models import Student
-from .forms import Cadastrar
+from .forms import Cadastrar, Login
 from django.core.mail import send_mail
 
 def ValidaEmail(request):
@@ -13,7 +13,13 @@ def ValidaEmail(request):
     return render (request, 'Validando.html')
 
 def PaginaInicial(request):
-    return render(request,'Login.html')
+    if request.method == 'POST':
+        log = Login(request.POST)
+        if(log.is_valid()):
+            return Home(request)
+    else:
+        log = Login() 
+    return render(request,'Login.html', {'form': log})
 
 def EsqueceuSenha(request):
     return render(request,'Esqueci.html')

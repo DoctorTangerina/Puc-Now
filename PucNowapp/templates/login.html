@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de login</title> 
     <link type="text/css" rel="stylesheet" href="{% static 'Login.css' %}">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
-        .container{
-            justify-content: center;
-        }
         body{
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -20,11 +19,9 @@
             margin-top: 10px;
         }
         .login{
-            position: absolute;
+			margin: auto;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
-			align-items: center;
         }
         input{
             padding: 15px;
@@ -54,28 +51,32 @@
         }
     </style>
 </head>
- <ajuste >
 <body class="bg">
-    <div class="logo">
+	<div class="logo">
         <img src="{% static 'logoCompleta.png' %}">
     </div>
-    <div class="login">
-        <input type="text" placeholder="Nome de usuario">
-        <br><br>
-        <input type="password" placeholder="Senha">
-        <br><br>
-		<p style="text-align: left">Lembrar senha
-		<label class="switch">
-			<input type="checkbox">
-			<span class="slider round"></span>
-		</label>
-		</p>
-        <button>Entrar</button>
-		<div class="text-center">
-			<a>Esqueceu a senha?</a><br>
-			<a href="\cadastro">Cadastre-se</a>
+	<div class="login">
+		<div class="container-sm justify-content-center">
+			<form class="text-center" action="login" method="post" id="formLogin"> {% csrf_token %}
+				{% for field in form %}
+				<div class="row mb-3">
+				{{ field.errors }}
+					<div class="col-sm-10">
+					{{ field }}
+					</div>
+				</div>
+				{% endfor %}
+				<!--<input type="text" placeholder="Nome de usuario">
+				<br><br>
+				<input type="password" placeholder="Senha">
+				<br><br>-->
+			</form>
+			<button form= "formLogin" type="login">Entrar</button>
+			<div class="text-center">
+				<a>Esqueceu a senha?</a><br>
+				<a href="\cadastro">Cadastre-se</a>
+			</div>
 		</div>
 	</div>
-</ajuste>
 </body>
 </html>
