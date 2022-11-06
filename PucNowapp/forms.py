@@ -1,7 +1,8 @@
 from django import forms
-from django.contrib.auth.models import User
+from .models import Student
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
+
 
 class Cadastrar(forms.Form):
 
@@ -14,8 +15,15 @@ class Cadastrar(forms.Form):
          
 
     def clean_email(self):
-        email = self.cleaned_data['Email']
-        if User.objects.filter(Email = email).exists():
-            raise ValidationError ('email ja esta em uso'.format(email))
+        emil = self.cleaned_data['email']
+        if Student.objects.filter(email = emil).exists():
+            raise ValidationError ('email ja esta em uso'.format(emil))
 
-        return email
+        return emil
+
+    def clean_usernome(self):
+        nombre = self.cleaned_data['username']
+        if Student.objects.filter(username = nombre).exists():
+            raise ValidationError ('esse nome ja esta em uso'.format(nombre))
+
+        return nombre
