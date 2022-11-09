@@ -60,10 +60,10 @@
 			<form class="text-center" action="login" method="post" id="formLogin"> {% csrf_token %}
 				{% for field in form %}
 				<div class="row mb-3">
-				{{ field.errors }}
 					<div class="col-sm-10">
 					{{ field }}
 					</div>
+					{{ field.errors }}
 				</div>
 				{% endfor %}
 				<!--<input type="text" placeholder="Nome de usuario">

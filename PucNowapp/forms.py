@@ -34,7 +34,7 @@ class Login(forms.Form):
     def clean_username(self):
         nome = self.cleaned_data['username']
         if not Student.objects.filter(username = nome).exists():
-            raise ValidationError('Usuario nao existe'.format(nome))
+            raise ValidationError('Usuário não existe'.format(nome))
 
         return nome
         
