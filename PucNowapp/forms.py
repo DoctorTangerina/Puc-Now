@@ -34,7 +34,7 @@ class Login(forms.Form):
     def clean_username(self):
         nome = self.cleaned_data['username']
         if not Student.objects.filter(username = nome).exists():
-            raise ValidationError('Usuário não existe'.format(nome))
+            raise ValidationError('Usuário ou senha incorreto(s)'.format(nome))
 
         return nome
         
@@ -47,6 +47,6 @@ class Login(forms.Form):
         
         senha = self.cleaned_data['password']
         if not user.values()[0]['password'] == senha:
-            raise ValidationError('Senha incorreta')
+            raise ValidationError('Usuário ou senha incorreto(s)')
             
         return senha
