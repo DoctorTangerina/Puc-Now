@@ -36,3 +36,23 @@ class Message(models.Model):
     owner = models.CharField(max_length=20)
     dateTimeSent = models.DateTimeField()
     sent = models.BooleanField()
+
+class Friends1(models.Model):
+    users1=models.ManyToManyField(Student,null=True)
+    current_user=models.ForeignKey(Student,related_name='owner',on_delete=models.CASCADE,null=True)
+
+
+
+    @classmethod
+    def make_friend(cls,current_user,new_friend):
+        friend,create=cls.objects.get_or_create(
+            current_user=current_user
+        )
+        friend.users1.add(new_friend)
+
+    @classmethod
+    def lose_friend(cls, current_user, new_friend):
+        friend, create = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        friend.users1.remove(new_friend)
