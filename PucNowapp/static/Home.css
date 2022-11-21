@@ -1,34 +1,15 @@
-.bg{
-    background-image: url("fundo.jpg");
+body{
+	display: flex;
+    flex-direction: column;
+    background-image: url('fundo.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
-  }
+    background-size: 100% 100%;
+}
 
-  img{
-    border-radius: 10%;
-    margin:auto;
-    display:block;
-  }
-
-  input{
-    margin:auto;
-    display:block;
-  }
-  div{
-    display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  header{
-    background-color: #576776;
-    width:100%;
-    z-index: -1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  text{
-    text-align: center;
-    color: aliceblue;
-  }
+Groups{
+	font-size: 40;
+}
+.btn {
+	padding: 2em 10em 2em 10em;
+}
