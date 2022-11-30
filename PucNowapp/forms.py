@@ -50,3 +50,23 @@ class Login(forms.Form):
             raise ValidationError('Usuário ou senha incorreto(s)')
             
         return senha
+
+class Criar_Grupo(forms.Form):
+    nome_grupo = forms.CharField(label=False, max_length=15, widget=forms.TextInput(attrs={'placeholder': 'Nome do grupo'}))
+    materia = forms.CharField(label=False, max_length=30, widget=forms.TextInput(attrs={'placeholder': 'Matéria abordada'}))
+    def clean_nome_grupo(self):
+        nomegrupo = self.cleaned_data['nome_grupo']
+        if Student.objects.filter(nome_grupo = nomegrupo).exists():
+            raise ValidationError('Nome de grupo já existente'.format(nomegrupo))
+        return nomegrupo
+
+class Add_Amigo(forms.Form):
+    adicionar_amg = forms.CharField(label=False, widget=forms.TextInput(attrs={'placeholder': 'Digite o amigo a ser adicionado'}))
+    let adicionar_amg = ['amigo']
+    
+class Remover_Amigo(forms.Form):
+    remover = forms.CharField(label=False, widget=forms.TextInput(attrs={'placeholder': 'Digite o amigo a ser removido'}))
+    def clean_amigo(self):
+        amg_deletado = self.cleaned_data['amigo']
+    
+
